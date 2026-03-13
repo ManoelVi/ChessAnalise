@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "dev",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["--input-type=module", "-e", "process.chdir('C:/dev/ChessAnalise/chess-analyzer');process.argv=['node','vite','--port','5173'];await import('file:///C:/dev/ChessAnalise/chess-analyzer/node_modules/vite/bin/vite.js')"],
+      "port": 5173
+    }
+  ]
+}

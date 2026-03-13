@@ -1,0 +1,91 @@
+.stats-panel {
+  background: #1a1a3e;
+  border-radius: 8px;
+  padding: 12px;
+  min-width: 240px;
+}
+
+.stats-panel h3 {
+  margin: 0 0 12px;
+  font-size: 0.9rem;
+  color: #8899aa;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.accuracy-section {
+  margin-bottom: 16px;
+}
+
+.accuracy-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.accuracy-label {
+  width: 100px;
+  font-size: 0.8rem;
+  color: #aab;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.accuracy-bar-container {
+  flex: 1;
+  height: 8px;
+  background: #0f0f23;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.accuracy-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #4a9eff, #26c2a3);
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.accuracy-bar.black-bar {
+  background: linear-gradient(90deg, #7a6aff, #a34aff);
+}
+
+.accuracy-value {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #dde;
+  width: 50px;
+  text-align: right;
+}
+
+.classification-grid {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 2px 12px;
+}
+
+.class-header {
+  font-size: 0.8rem;
+  color: #667;
+  text-align: center;
+  padding-bottom: 4px;
+}
+
+.class-row-fragment {
+  display: contents;
+}
+
+.class-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 2px 0;
+}
+
+.class-count {
+  font-size: 0.8rem;
+  color: #aab;
+  text-align: center;
+  padding: 2px 4px;
+}

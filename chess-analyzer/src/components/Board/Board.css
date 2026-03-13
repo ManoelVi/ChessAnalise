@@ -1,0 +1,98 @@
+.board-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  width: 480px;
+  height: 480px;
+  border: 2px solid #2a2a4a;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.square {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.square.light {
+  background-color: #eedad0;
+}
+
+.square.dark {
+  background-color: #b58863;
+}
+
+.square.light.highlight-last {
+  background-color: #f5f682;
+}
+
+.square.dark.highlight-last {
+  background-color: #baca44;
+}
+
+.square.highlight-best-from {
+  background-color: rgba(74, 158, 255, 0.35);
+}
+
+.square.highlight-best-to {
+  background-color: rgba(74, 158, 255, 0.55);
+}
+
+.piece {
+  width: 85%;
+  height: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.piece svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
+}
+
+.coord-rank {
+  position: absolute;
+  top: 2px;
+  left: 3px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  pointer-events: none;
+}
+
+.coord-file {
+  position: absolute;
+  bottom: 1px;
+  right: 3px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  pointer-events: none;
+}
+
+.coord-light {
+  color: #eedad0;
+}
+
+.coord-dark {
+  color: #b58863;
+}
+
+@media (max-width: 600px) {
+  .board {
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    aspect-ratio: 1;
+  }
+}

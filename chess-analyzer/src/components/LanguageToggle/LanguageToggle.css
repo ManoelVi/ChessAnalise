@@ -1,0 +1,16 @@
+.lang-toggle {
+  background: #1a1a3e;
+  border: 1px solid #2a2a5a;
+  border-radius: 20px;
+  padding: 6px 14px;
+  color: #ccd;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.lang-toggle:hover {
+  background: #2a2a5a;
+  border-color: #4a9eff;
+}
