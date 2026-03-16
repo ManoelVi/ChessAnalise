@@ -2,14 +2,17 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 import type { AnalyzedMove, MoveClassification } from '../engine/types';
 import type { Language } from '../i18n/translations';
 
-const API_KEY = 'AIzaSyC91balWWIlAXC7_407_AOFa0og8PpG4xM';
 const MODEL_NAME = 'gemini-2.0-flash';
 
 let genAI: GoogleGenerativeAI | null = null;
 
 function getClient(): GoogleGenerativeAI {
   if (!genAI) {
-    genAI = new GoogleGenerativeAI(API_KEY);
+    const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+    if (!apiKey) {
+      throw new Error('VITE_GEMINI_API_KEY not configured');
+    }
+    genAI = new GoogleGenerativeAI(apiKey);
   }
   return genAI;
 }
