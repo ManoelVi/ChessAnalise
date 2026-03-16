@@ -5,14 +5,16 @@
 }
 
 .board {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(8, 1fr);
   width: 480px;
   height: 480px;
-  border: 2px solid #2a2a4a;
+  border: 2px solid #E2E8F0;
   border-radius: 4px;
   overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .square {
@@ -39,12 +41,33 @@
   background-color: #baca44;
 }
 
-.square.highlight-best-from {
-  background-color: rgba(74, 158, 255, 0.35);
+.classification-badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 800;
+  z-index: 3;
+  pointer-events: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  line-height: 1;
 }
 
-.square.highlight-best-to {
-  background-color: rgba(74, 158, 255, 0.55);
+.best-move-arrow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
 }
 
 .piece {

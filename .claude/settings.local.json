@@ -6,7 +6,13 @@
       "Bash(npx tsc:*)",
       "mcp__Claude_Preview__preview_start",
       "Bash(node -e \"console.log\\(require.resolve\\(''vite/bin/vite.js'', {paths: [''C:/dev/ChessAnalise/chess-analyzer'']}\\)\\)\")",
-      "Bash(taskkill //F //IM node.exe)"
+      "Bash(taskkill //F //IM node.exe)",
+      "WebFetch(domain:github.com)",
+      "Bash(npm --version)",
+      "Bash(uipro init:*)",
+      "Bash(find . -name *.worker.ts -o -name *worker* -type f)",
+      "WebSearch",
+      "Bash(find /c/dev/ChessAnalise/chess-analyzer/node_modules/stockfish -name *.js -o -name *.wasm)"
     ]
   }
 }

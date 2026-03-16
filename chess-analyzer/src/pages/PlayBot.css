@@ -1,0 +1,101 @@
+.playbot-page {
+  padding: 24px;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.playbot-content {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.playbot-board-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.playbot-info-panel {
+  min-width: 260px;
+  max-width: 300px;
+}
+
+.playbot-card {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.playbot-icon {
+  font-size: 3rem;
+  margin-bottom: 12px;
+  opacity: 0.7;
+}
+
+.playbot-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1E293B;
+  margin: 0 0 8px;
+}
+
+.playbot-description {
+  color: #22C55E;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0 0 20px;
+  padding: 6px 16px;
+  background: rgba(34, 197, 94, 0.08);
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.playbot-features {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+}
+
+.playbot-feature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: #64748B;
+}
+
+.feature-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #22C55E;
+  flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  .playbot-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .playbot-info-panel {
+    width: 100%;
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 600px) {
+  .playbot-page {
+    padding: 12px;
+  }
+}

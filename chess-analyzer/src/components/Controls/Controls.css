@@ -8,10 +8,10 @@
 .ctrl-btn {
   width: 44px;
   height: 36px;
-  background: #1a1a3e;
-  border: 1px solid #2a2a5a;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
   border-radius: 6px;
-  color: #ccd;
+  color: #334155;
   font-size: 1rem;
   cursor: pointer;
   display: flex;
@@ -21,8 +21,9 @@
 }
 
 .ctrl-btn:hover:not(:disabled) {
-  background: #2a2a5a;
-  border-color: #4a9eff;
+  background: #F1F5F9;
+  border-color: #22C55E;
+  color: #22C55E;
 }
 
 .ctrl-btn:disabled {

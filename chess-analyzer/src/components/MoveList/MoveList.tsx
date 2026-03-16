@@ -53,7 +53,7 @@ export default function MoveList({ moves, currentIndex, onSelectMove }: MoveList
         style={{
           borderLeftColor: color || 'transparent',
           backgroundColor: isActive
-            ? (color ? `${color}22` : 'rgba(74, 158, 255, 0.25)')
+            ? (color ? `${color}22` : 'rgba(34, 197, 94, 0.15)')
             : undefined,
         }}
         onClick={() => onSelectMove(idx)}

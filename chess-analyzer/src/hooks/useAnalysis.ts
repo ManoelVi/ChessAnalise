@@ -1,6 +1,7 @@
 import { useState, useCallback } from 'react';
 import { pgnToFens } from '../engine/chess';
 import { getCloudEval, evalToCp, evalToDisplay, getBestMove, delay } from '../services/lichessApi';
+import { evaluatePosition, destroyEngine } from '../services/stockfishEngine';
 import { classifyMove, calculateAccuracy } from '../utils/classification';
 import type { AnalyzedMove, ClassificationCounts, MoveClassification, PieceColor } from '../engine/types';
 
@@ -67,14 +68,18 @@ export function useAnalysis() {
       const bestMoves: (string | null)[] = [];
 
       // Get eval for initial position and each position after a move
+      // Try Lichess cloud eval first, fallback to local Stockfish WASM
       for (let i = 0; i <= fens.length - 1; i++) {
-        const evalData = await getCloudEval(fens[i], multiPv);
+        let evalData = await getCloudEval(fens[i], multiPv);
+        if (!evalData) {
+          evalData = await evaluatePosition(fens[i], 16);
+        }
         evals.push(evalToCp(evalData));
         evalDisplays.push(evalToDisplay(evalData));
         bestMoves.push(getBestMove(evalData));
 
         setState(prev => ({ ...prev, progress: Math.min(i, sans.length) }));
-        await delay(100);
+        if (evalData) await delay(50);
       }
 
       // Build analyzed moves

@@ -1,23 +1,26 @@
 .move-list {
-  background: #1a1a3e;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
   border-radius: 8px;
   padding: 12px;
   min-width: 240px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .move-list h3 {
   margin: 0 0 8px;
   font-size: 0.9rem;
-  color: #8899aa;
+  color: #64748B;
   text-transform: uppercase;
   letter-spacing: 1px;
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 .move-list-scroll {
   max-height: 420px;
   overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-color: #2a2a5a #1a1a3e;
+  scrollbar-color: #CBD5E1 #F1F5F9;
 }
 
 .move-row {
@@ -30,7 +33,7 @@
 .move-number {
   width: 30px;
   text-align: right;
-  color: #556677;
+  color: #94A3B8;
   font-size: 0.8rem;
   font-weight: 600;
   flex-shrink: 0;
@@ -43,7 +46,7 @@
   border-radius: 4px;
   font-size: 0.9rem;
   font-family: monospace;
-  color: #ccd;
+  color: #334155;
   border-left: 3px solid transparent;
   transition: background 0.15s, border-color 0.15s;
   display: flex;
@@ -53,16 +56,16 @@
 }
 
 .move-cell:hover {
-  background: rgba(74, 158, 255, 0.15);
+  background: rgba(34, 197, 94, 0.1);
 }
 
 .move-cell.active {
-  color: #fff;
+  color: #1E293B;
   font-weight: 600;
 }
 
 .move-cell.move-negative {
-  color: #eedd;
+  color: #64748B;
 }
 
 .move-cell.empty {

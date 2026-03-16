@@ -1,16 +1,19 @@
 .stats-panel {
-  background: #1a1a3e;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
   border-radius: 8px;
   padding: 12px;
   min-width: 240px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .stats-panel h3 {
   margin: 0 0 12px;
   font-size: 0.9rem;
-  color: #8899aa;
+  color: #64748B;
   text-transform: uppercase;
   letter-spacing: 1px;
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 .accuracy-section {
@@ -27,7 +30,7 @@
 .accuracy-label {
   width: 100px;
   font-size: 0.8rem;
-  color: #aab;
+  color: #64748B;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -36,26 +39,26 @@
 .accuracy-bar-container {
   flex: 1;
   height: 8px;
-  background: #0f0f23;
+  background: #E2E8F0;
   border-radius: 4px;
   overflow: hidden;
 }
 
 .accuracy-bar {
   height: 100%;
-  background: linear-gradient(90deg, #4a9eff, #26c2a3);
+  background: linear-gradient(90deg, #22C55E, #16A34A);
   border-radius: 4px;
   transition: width 0.5s ease;
 }
 
 .accuracy-bar.black-bar {
-  background: linear-gradient(90deg, #7a6aff, #a34aff);
+  background: linear-gradient(90deg, #8B5CF6, #A855F7);
 }
 
 .accuracy-value {
   font-size: 0.85rem;
   font-weight: 700;
-  color: #dde;
+  color: #1E293B;
   width: 50px;
   text-align: right;
 }
@@ -68,7 +71,7 @@
 
 .class-header {
   font-size: 0.8rem;
-  color: #667;
+  color: #94A3B8;
   text-align: center;
   padding-bottom: 4px;
 }
@@ -85,7 +88,7 @@
 
 .class-count {
   font-size: 0.8rem;
-  color: #aab;
+  color: #64748B;
   text-align: center;
   padding: 2px 4px;
 }

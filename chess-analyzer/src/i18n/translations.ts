@@ -48,6 +48,13 @@ export const translations = {
     errorAnalysis: 'Erro durante a análise.',
     errorNetwork: 'Erro de conexão. Tente novamente.',
     pasteOrSearch: 'Cole um PGN, busque por usuário ou importe por link',
+    analysis: 'Analise',
+    playBot: 'Jogar vs Bot',
+    comingSoon: 'Em breve...',
+    newAnalysis: 'Nova Analise',
+    playBotFeature1: 'Diferentes niveis de dificuldade',
+    playBotFeature2: 'Analise pos-jogo automatica',
+    playBotFeature3: 'Dicas durante a partida',
   },
   en: {
     title: 'Chess Analyzer',
@@ -96,6 +103,13 @@ export const translations = {
     errorAnalysis: 'Error during analysis.',
     errorNetwork: 'Connection error. Try again.',
     pasteOrSearch: 'Paste a PGN, search by user, or import by link',
+    analysis: 'Analysis',
+    playBot: 'Play vs Bot',
+    comingSoon: 'Coming soon...',
+    newAnalysis: 'New Analysis',
+    playBotFeature1: 'Different difficulty levels',
+    playBotFeature2: 'Automatic post-game analysis',
+    playBotFeature3: 'Hints during the game',
   },
 } as const;
 
