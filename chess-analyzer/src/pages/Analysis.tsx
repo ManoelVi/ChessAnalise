@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { useAnalysis } from '../hooks/useAnalysis';
+import { useCommentary } from '../hooks/useCommentary';
 import { playMoveSound, playCaptureSound } from '../utils/sounds';
 import { useTranslation } from '../i18n/useTranslation';
 import type { TranslationKey } from '../i18n/translations';
@@ -9,21 +10,24 @@ import MoveList from '../components/MoveList/MoveList';
 import GameInput from '../components/GameInput/GameInput';
 import Stats from '../components/Stats/Stats';
 import Controls from '../components/Controls/Controls';
+import MoveCommentary from '../components/MoveCommentary/MoveCommentary';
 
 export default function Analysis() {
-  const { t } = useTranslation();
+  const { t, lang } = useTranslation();
   const [flipped, setFlipped] = useState(false);
   const [currentMoveIndex, setCurrentMoveIndex] = useState(-1);
   const [showInput, setShowInput] = useState(true);
   const prevMoveIndex = useRef(-1);
 
   const analysis = useAnalysis();
+  const { commentary, isLoading: isLoadingCommentary, fetchCommentary, clearCommentary, clearCache } = useCommentary(lang);
 
   const handleSubmitPgn = useCallback((pgn: string) => {
     setCurrentMoveIndex(-1);
     setShowInput(false);
+    clearCache();
     analysis.analyze(pgn);
-  }, [analysis]);
+  }, [analysis, clearCache]);
 
   const goTo = useCallback((index: number) => {
     if (index === prevMoveIndex.current) return;
@@ -37,9 +41,12 @@ export default function Analysis() {
       } else {
         playMoveSound();
       }
+      fetchCommentary(index, move);
+    } else {
+      clearCommentary();
     }
     prevMoveIndex.current = index;
-  }, [analysis]);
+  }, [analysis, fetchCommentary, clearCommentary]);
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
@@ -137,6 +144,13 @@ export default function Analysis() {
                 currentIndex={currentMoveIndex}
                 onSelectMove={goTo}
               />
+              {!analysis.isAnalyzing && hasAnalysis && currentMoveIndex >= 0 && (
+                <MoveCommentary
+                  commentary={commentary}
+                  isLoading={isLoadingCommentary}
+                  classification={analysis.moves[currentMoveIndex]?.classification}
+                />
+              )}
               {!analysis.isAnalyzing && hasAnalysis && (
                 <Stats
                   whiteAccuracy={analysis.whiteAccuracy}
@@ -145,19 +159,18 @@ export default function Analysis() {
                   blackStats={analysis.blackStats}
                 />
               )}
+              {!analysis.isAnalyzing && hasAnalysis && (
+                <div className="new-analysis-inline">
+                  <button
+                    className="btn-secondary"
+                    onClick={() => setShowInput(true)}
+                  >
+                    {t('newAnalysis')}
+                  </button>
+                </div>
+              )}
             </div>
           </div>
-
-          {!analysis.isAnalyzing && hasAnalysis && (
-            <div className="new-analysis">
-              <button
-                className="btn-secondary"
-                onClick={() => setShowInput(true)}
-              >
-                {t('newAnalysis')}
-              </button>
-            </div>
-          )}
         </main>
       )}
 

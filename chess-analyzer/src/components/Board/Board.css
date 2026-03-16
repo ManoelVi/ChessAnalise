@@ -9,8 +9,8 @@
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(8, 1fr);
-  width: 480px;
-  height: 480px;
+  width: var(--board-size, 560px);
+  height: var(--board-size, 560px);
   border: 2px solid #E2E8F0;
   border-radius: 4px;
   overflow: hidden;
@@ -113,9 +113,7 @@
 
 @media (max-width: 600px) {
   .board {
-    width: 100%;
-    max-width: 360px;
-    height: auto;
-    aspect-ratio: 1;
+    width: var(--board-size, 360px);
+    height: var(--board-size, 360px);
   }
 }

@@ -55,6 +55,12 @@ export const translations = {
     playBotFeature1: 'Diferentes niveis de dificuldade',
     playBotFeature2: 'Analise pos-jogo automatica',
     playBotFeature3: 'Dicas durante a partida',
+    aiCommentary: 'Comentário IA',
+    loadingCommentary: 'Analisando lance...',
+    noApiKey: 'Configure sua API key do Gemini para comentários de IA',
+    geminiApiKey: 'API Key do Gemini',
+    getApiKey: 'Obter API key gratuita →',
+    configureApiKey: 'Configurar API Key',
   },
   en: {
     title: 'Chess Analyzer',
@@ -110,6 +116,12 @@ export const translations = {
     playBotFeature1: 'Different difficulty levels',
     playBotFeature2: 'Automatic post-game analysis',
     playBotFeature3: 'Hints during the game',
+    aiCommentary: 'AI Commentary',
+    loadingCommentary: 'Analyzing move...',
+    noApiKey: 'Configure your Gemini API key for AI commentary',
+    geminiApiKey: 'Gemini API Key',
+    getApiKey: 'Get free API key →',
+    configureApiKey: 'Configure API Key',
   },
 } as const;
 

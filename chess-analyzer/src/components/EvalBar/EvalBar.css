@@ -6,8 +6,8 @@
 }
 
 .eval-bar {
-  width: 30px;
-  height: 480px;
+  width: 28px;
+  height: var(--board-size, 560px);
   border-radius: 4px;
   overflow: hidden;
   display: flex;
